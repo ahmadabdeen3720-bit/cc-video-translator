@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Video CC</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="top">
+      <h1>CC داخل الفيديو</h1>
+      <p class="sub">عربي ممتاز + ترجمة عبري + تحميل فيديو بالترجمة</p>
+    </header>
+
+    <section class="panel">
+        <label class="chip">
+  <span>Language:</span>
+  <select onchange="setLang(this.value)">
+    <option value="ar">العربية</option>
+    <option value="he">עברית</option>
+    <option value="en">English</option>
+  </select>
+</label>
+
+      <div class="row">
+        <input id="videoFile" type="file" accept="video/*" />
+        <button id="btnUpload">رفع</button>
+        <button id="btnCC" disabled>عمل CC</button>
+        <button id="btnDownload" disabled>تحميل الفيديو مع الترجمة</button>
+      </div>
+
+      <div class="row">
+        <label class="chip">
+          <span>المخرجات:</span>
+          <select id="output">
+            <option value="dual" selected>الأصلي (عربي) + عبري</option>
+            <option value="he">عبري فقط</option>
+            <option value="src">الأصلي فقط</option>
+          </select>
+        </label>
+
+        <label class="chip">
+          <span>لغة الفيديو:</span>
+          <input id="lang" value="ar" />
+        </label>
+
+        <label class="chip">
+          <span>إظهار الإطار:</span>
+          <input id="toggleBox" type="checkbox" checked />
+        </label>
+      </div>
+
+      <div id="status" class="status">جاهز</div>
+    </section>
+
+    <section class="playerWrap">
+      <div class="videoBox">
+        <video id="player" controls playsinline></video>
+
+        <div id="ccBox" class="ccBox">
+          <div id="ccText" class="ccText"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

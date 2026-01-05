@@ -1,0 +1,110 @@
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background:#0b0f17;
+  color:#e9eef8;
+}
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:18px;
+}
+.top h1{margin:0 0 6px;font-size:22px}
+.sub{margin:0;color:#a9b4c7;font-size:13px}
+
+.panel{
+  margin-top:14px;
+  padding:14px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.03);
+  border-radius:14px;
+}
+.row{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-bottom:10px;
+}
+button{
+  border:0;
+  padding:10px 14px;
+  border-radius:10px;
+  background:#3b82f6;
+  color:white;
+  font-weight:700;
+  cursor:pointer;
+}
+button:disabled{opacity:.5;cursor:not-allowed}
+
+input[type="file"]{
+  padding:10px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:10px;
+  color:#e9eef8;
+}
+
+.chip{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  padding:8px 10px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.04);
+  border-radius:999px;
+}
+.chip span{color:#b7c2d8;font-size:12px}
+select, .chip input{
+  background:transparent;
+  border:0;
+  outline:0;
+  color:#e9eef8;
+}
+.chip input{width:160px}
+
+.status{
+  padding:10px 12px;
+  border-radius:10px;
+  background:rgba(34,197,94,.12);
+  border:1px solid rgba(34,197,94,.25);
+  color:#bff3cf;
+  font-size:13px;
+}
+
+.playerWrap{margin-top:14px}
+.videoBox{
+  position:relative;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.10);
+  background:black;
+}
+video{width:100%;height:auto;display:block}
+
+.ccBox{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:28px;
+  width:min(92%, 900px);
+  pointer-events:none;
+  display:flex;
+  justify-content:center;
+}
+.ccText{
+  max-width:100%;
+  text-align:center;
+  padding:10px 14px;
+  border-radius:14px;
+  background:rgba(0,0,0,.72);
+  border:1px solid rgba(255,255,255,.18);
+  color:#fff;
+  font-size:18px;
+  line-height:1.35;
+  text-shadow:0 2px 8px rgba(0,0,0,.6);
+  white-space: pre-wrap; /* ✅ سطرين */
+}
+
+.hint{margin-top:10px;color:#a9b4c7;font-size:13px}
