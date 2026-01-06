@@ -1,23 +1,14 @@
 FROM python:3.11-slim
 
-# ffmpeg + خطوط للعربي/العبري
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    ffmpeg \
-    fonts-dejavu-core \
-    fonts-freefont-ttf \
-    fonts-noto \
-    fonts-noto-color-emoji \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y ffmpeg && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-COPY requirements.txt /app/requirements.txt
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . /app
+COPY . .
 
-ENV PORT=10000
-EXPOSE 10000
+ENV PYTHONUNBUFFERED=1
 
-# لازم يكون عندك app = Flask(...) داخل main.py
-CMD ["gunicorn", "-w", "1", "-k", "gthread", "--threads", "8", "-b", "0.0.0.0:10000", "main:app"]
+CMD gunicorn -w 1 -k gthread --threads 4 -b 0.0.0.0:${PORT} main:app
