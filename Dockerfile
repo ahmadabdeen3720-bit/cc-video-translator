@@ -11,4 +11,4 @@ COPY . .
 
 ENV PYTHONUNBUFFERED=1
 
-CMD gunicorn -w 1 -k gthread --threads 4 -b 0.0.0.0:${PORT} main:app
+CMD ["sh", "-c", "gunicorn main:app --bind 0.0.0.0:$PORT --workers 1 --threads 2 --timeout 180"]
