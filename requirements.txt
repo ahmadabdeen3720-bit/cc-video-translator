@@ -2,3 +2,4 @@ Flask==3.0.3
 faster-whisper==1.0.3
 ffmpeg-python==0.2.0
 argostranslate==1.9.6
+gunicorn
